@@ -6,9 +6,9 @@ if [[ EUID -ne 0 ]]; then
 fi
 
 
-useradd -d /var/lib/webgen -r -m -s /usr/sbin/nologin webgen
+useradd -d /var/lib/webgen -r -m -s /usr/sbin/nologin webgen # create the webgen user
 
-sudo chown -R webgen /var/lib/webgen
+sudo chown -R webgen /var/lib/webgen # change ownership of the webgen directory to the webgen user
 
 if [[ ! -d /var/lib/webgen/HTML ]]; then
     mkdir -p /var/lib/webgen/HTML
@@ -20,7 +20,7 @@ fi
 
 if [[ ! -f /var/lib/webgen/bin/generate_index ]]; then
     touch /var/lib/webgen/bin/generate_index
-    cat > /var/lib/webgen/bin/generate_index <<- "isagi"
+    cat > /var/lib/webgen/bin/generate_index <<- "isagi" 
 #!/bin/bash
 
 set -euo pipefail
@@ -85,12 +85,12 @@ if [[ ! -f /etc/systemd/system/generate-index.service ]]; then
     cat > /etc/systemd/system/generate-index.service <<- isagi
 [Unit]
 Description=Run generate_index script
-After=network-online.target
-Wants=network-online.target
+After=network-online.target # ensure network is available before running the script
+Wants=network-online.target 
 
 [Service]
-Type=oneshot
-ExecStart=/var/lib/webgen/bin/generate_index
+Type=oneshot # run the script once and exit
+ExecStart=/var/lib/webgen/bin/generate_index 
 User=webgen
 Group=webgen
 
