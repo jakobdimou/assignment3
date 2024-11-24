@@ -70,6 +70,7 @@ To test the nginx configuration:
 ```
 sudo nginx -t
 ```
+**source:** [Arch Linux nginx Wiki](https://wiki.archlinux.org/title/Nginx)
 ## Task 4 (ufw configuration)
 Make sure ufw is installed and if not, type:
 ```
