@@ -1,4 +1,4 @@
-# assignment3
+# assignment3 Jakob Dimou ACIT2420 A01398523
 
 ## Task 1 and 2 (webgen user creation and creation of generate-index service and timer files)
 Running the script `setup` will create the `webgen` user and proper directories as well as the `generate_index` script. It will also create the generate-index service and timer files. The service and timer files can be enabled and started by typing:
