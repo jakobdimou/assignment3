@@ -3,10 +3,9 @@
 ## Task 1 and 2
 Running the script `setup` will create the `webgen` user and proper directories as well as the `generate_index` script. It will also create the generate-index service and timer files. The service and timer files can be enabled and started by typing:
 ```
-sudo systemctl enable generate-index.service
-sudo systemctl start generate-index.service
-sudo systemctl enable generate-index.timer
-sudo systemctl start generate-index.timer
+sudo systemctl enable --now generate-index.service
+sudo systemctl enable --now generate-index.timer
+
 ```
 To check that the timer and services are running correctly:
 ```
