@@ -8,7 +8,16 @@ sudo systemctl start generate-index.service
 sudo systemctl enable generate-index.timer
 sudo systemctl start generate-index.timer
 ```
-
+To check that the timer and services are running correctly:
+```
+sudo systemctl status generate-index.service
+sudo systemctl status generate-index.timer
+```
+To check logs of service or timer:
+```
+sudo journalctl -u generate-index.service
+sudo journalctl -u generate-index.timer
+```
 ## Task 3
 ### Step 1
 Install the nginx package if it already is not installed - ```sudo pacman -S nginx```
@@ -49,3 +58,16 @@ server {
     }
 }
 ```
+
+Creating a separate server block files allows sites to be disabled easily by just renaming them to add disabled at the end, e.g. `webgen.conf.disabled`. It also makes configurations easier to manage as each configuration has their own separate file.
+
+To check the status of the nginx service you can type:
+```
+sudo systemctl status nginx
+```
+
+To test the nginx configuration:
+```
+sudo nginx -t
+```
+
