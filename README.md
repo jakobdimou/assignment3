@@ -28,7 +28,7 @@ sudo nvim /etc/nginx/nginx.conf
 and at the top of the file change `#user http;` to `user webgen;`
 
 ### Step 2
-To create a separate server block file that configures Nginx to serve the index.html file on port 80, modify the `nginx.conf` file to include
+To create a separate server block file that configures Nginx to serve the index.html file on port 80, the main nginx configuration file `(/etc/nginx/nginx.conf)` needs to be modified to include:
 ```
 include /etc/nginx/conf.d/*.conf
 ```
@@ -114,7 +114,8 @@ Restart the ufw service:
 ```
 sudo systemctl restart ufw
 ```
-Or make sure system is up to date with this command and after running it, turn the droplet off and on through Digital Ocean.
+### Other fix
+Make sure system is up to date with this command and after running it, turn the droplet off and on through Digital Ocean.
 ```
 sudo pacman -Syu
 ```
