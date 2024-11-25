@@ -114,5 +114,10 @@ Restart the ufw service:
 ```
 sudo systemctl restart ufw
 ```
+Or make sure system is up to date with this command and after running it, turn the droplet off and on through Digital Ocean.
+```
+sudo pacman -Syu
+```
+
 
 
