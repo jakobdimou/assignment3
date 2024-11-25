@@ -5,7 +5,8 @@ if [[ EUID -ne 0 ]]; then
     exit 1
 fi
 
-
+# -d specifies the home directory, -r makes the new user a system user, -m creates the home directory if it does not exist, -s sets the shell
+# /usr/sbin/nologin is a shell that prevents the user from logging in as webgen is a user meant for running services
 useradd -d /var/lib/webgen -r -m -s /usr/sbin/nologin webgen # create the webgen user
 
 chown -R webgen /var/lib/webgen # change ownership of the webgen directory to the webgen user
