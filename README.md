@@ -1,4 +1,4 @@
-# assignment3
+# assignment3 Jakob Dimou ACIT2420 A01398523
 
 ## Task 1 and 2 (webgen user creation and creation of generate-index service and timer files)
 Running the script `setup` will create the `webgen` user and proper directories as well as the `generate_index` script. It will also create the generate-index service and timer files. The service and timer files can be enabled and started by typing:
@@ -70,6 +70,7 @@ To test the nginx configuration:
 ```
 sudo nginx -t
 ```
+**source:** [Arch Linux nginx Wiki](https://wiki.archlinux.org/title/Nginx)
 ## Task 4 (ufw configuration)
 Make sure ufw is installed and if not, type:
 ```
@@ -113,5 +114,10 @@ Restart the ufw service:
 ```
 sudo systemctl restart ufw
 ```
+Or make sure system is up to date with this command and after running it, turn the droplet off and on through Digital Ocean.
+```
+sudo pacman -Syu
+```
+
 
 
