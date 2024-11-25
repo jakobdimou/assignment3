@@ -8,7 +8,7 @@ fi
 
 useradd -d /var/lib/webgen -r -m -s /usr/sbin/nologin webgen # create the webgen user
 
-sudo chown -R webgen /var/lib/webgen # change ownership of the webgen directory to the webgen user
+chown -R webgen /var/lib/webgen # change ownership of the webgen directory to the webgen user
 
 if [[ ! -d /var/lib/webgen/HTML ]]; then
     mkdir -p /var/lib/webgen/HTML
